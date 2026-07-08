@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<script>try{if(localStorage.getItem('zy_theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>زرین‌یراق | تولید و واردات یراق‌آلات در، کابینت و دستگیره هوشمند</title>
+<meta name="description" content="زرین‌یراق، تولیدکننده و واردکننده یراق‌آلات درب و کابینت و دستگیره‌های هوشمند. کیفیت صنعتی، ضمانت اصالت، مشاوره و نمایندگی رسمی در سراسر ایران.">
+<meta name="keywords" content="یراق آلات درب, یراق کابینت, دستگیره هوشمند, قفل هوشمند, لولا, ریل کشو, واردات یراق آلات">
+<link rel="canonical" href="https://zarrinyaragh.ir/">
+<meta property="og:title" content="زرین‌یراق | یراق‌آلات درب و کابینت و دستگیره هوشمند">
+<meta property="og:description" content="تولید، واردات و فروش یراق‌آلات درب و کابینت و دستگیره‌های هوشمند با گارانتی اصالت.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#15171b;
+    --panel:#1d2024;
+    --panel-2:#24282d;
+    --text:#edeae2;
+    --text-dim:#9a9d9f;
+    --brass:#c4924f;
+    --brass-light:#e0b372;
+    --teal:#3fa7a0;
+    --line:#34383e;
+    --radius:2px;
+    --header-bg:rgba(21,23,27,.9);
+    --btn-ink:#15171b;
+  }
+  html[data-theme="light"]{
+    --bg:#f5f2ec;
+    --panel:#ffffff;
+    --panel-2:#efeae0;
+    --text:#211d17;
+    --text-dim:#6b665c;
+    --brass:#a8763a;
+    --brass-light:#8a5f2c;
+    --teal:#1f7d76;
+    --line:#ddd6c8;
+    --header-bg:rgba(245,242,236,.88);
+    --btn-ink:#f5f2ec;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Vazirmatn', sans-serif;
+    line-height:1.7;
+    overflow-x:hidden;
+    transition:background .25s ease, color .25s ease;
+  }
+  .mono{font-family:'JetBrains Mono', monospace; direction:ltr; display:inline-block;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+
+  /* corner-bracket "blueprint" frame, used on cards */
+  .blueprint{position:relative; border:1px solid var(--line);}
+  .blueprint::before, .blueprint::after,
+  .blueprint > .bp-tl, .blueprint > .bp-br{
+    content:""; position:absolute; width:14px; height:14px; pointer-events:none;
+  }
+  .blueprint::before{ top:-1px; right:-1px; border-top:2px solid var(--brass); border-right:2px solid var(--brass);}
+  .blueprint::after{ bottom:-1px; left:-1px; border-bottom:2px solid var(--brass); border-left:2px solid var(--brass);}
+
+  /* header */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--header-bg); backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 0;}
+  .logo{display:flex; align-items:center; gap:10px; font-weight:900; font-size:20px; letter-spacing:.5px;}
+  .logo .mark{width:34px; height:34px; border:1.5px solid var(--brass); display:flex; align-items:center; justify-content:center; color:var(--brass); font-family:'JetBrains Mono'; font-weight:700; font-size:14px; transform:rotate(45deg);}
+  .logo .mark span{transform:rotate(-45deg);}
+  nav ul{display:flex; gap:34px; list-style:none;}
+  nav ul a{font-size:15px; font-weight:500; color:var(--text-dim); transition:color .2s;}
+  nav ul a:hover{color:var(--brass-light);}
+  .nav-cta{border:1px solid var(--brass); color:var(--brass-light); padding:9px 20px; font-size:14px; font-weight:600; transition:.2s; white-space:nowrap;}
+  .nav-cta:hover{background:var(--brass); color:var(--bg);}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .theme-toggle{
+    width:38px; height:38px; border:1px solid var(--line); background:transparent; color:var(--text);
+    cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:.2s;
+  }
+  .theme-toggle:hover{border-color:var(--brass);}
+  .theme-toggle svg{width:18px; height:18px;}
+  .theme-toggle .icon-sun{display:none;}
+  html[data-theme="light"] .theme-toggle .icon-moon{display:none;}
+  html[data-theme="light"] .theme-toggle .icon-sun{display:block;}
+  .burger{display:none; flex-direction:column; gap:5px; cursor:pointer; width:24px; padding:6px 0; flex-shrink:0;}
+  .burger span{width:24px; height:2px; background:var(--text); transition:.25s;}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-nav{
+    display:none; flex-direction:column; overflow:hidden; max-height:0;
+    transition:max-height .3s ease; border-top:1px solid var(--line);
+  }
+  .mobile-nav.open{max-height:480px;}
+  .mobile-nav a{display:block; padding:16px 24px; border-bottom:1px solid var(--line); font-size:15px; color:var(--text-dim);}
+  .mobile-nav a:active{color:var(--brass-light);}
+
+  /* hero */
+  .hero{position:relative; padding:90px 0 60px; overflow:hidden;}
+  .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:50px; align-items:center;}
+  .eyebrow{
+    font-family:'JetBrains Mono'; direction:ltr; text-align:right; font-size:12px; letter-spacing:2px;
+    color:var(--teal); text-transform:uppercase; margin-bottom:18px; display:flex; align-items:center; gap:10px; justify-content:flex-end;
+  }
+  .eyebrow::after{content:""; width:36px; height:1px; background:var(--teal);}
+  h1{font-size:46px; font-weight:900; line-height:1.35; margin-bottom:22px; letter-spacing:-.5px;}
+  h1 em{color:var(--brass-light); font-style:normal; position:relative;}
+  .hero p.lead{color:var(--text-dim); font-size:17px; max-width:520px; margin-bottom:34px;}
+  .btn-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{padding:15px 30px; font-weight:700; font-size:15px; border:1px solid var(--brass); transition:.2s; display:inline-block;}
+  .btn-primary{background:var(--brass); color:var(--btn-ink);}
+  .btn-primary:hover{background:var(--brass-light); border-color:var(--brass-light);}
+  .btn-ghost{color:var(--text); border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--brass);}
+
+  /* blueprint hero diagram */
+  .diagram{position:relative; aspect-ratio:1/1.05;}
+  .diagram svg{width:100%; height:100%;}
+  .callout{font-family:'JetBrains Mono'; font-size:11px; fill:var(--text-dim);}
+  .callout-strong{fill:var(--brass-light);}
+  .dim-line{stroke:var(--line); stroke-width:1;}
+  .part-line{stroke:var(--brass); stroke-width:1;}
+
+  /* dimension divider */
+  .dim-divider{display:flex; align-items:center; gap:14px; color:var(--text-dim); font-family:'JetBrains Mono'; font-size:12px; margin:0 0 40px;}
+  .dim-divider::before, .dim-divider::after{content:""; height:1px; background:var(--line); flex:1;}
+
+  /* stats bar */
+  .stats{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:36px 0;}
+  .stats-grid{display:grid; grid-template-columns:repeat(4,1fr);}
+  .stat{text-align:center; border-right:1px solid var(--line); padding:0 10px;}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'JetBrains Mono'; font-size:32px; font-weight:700; color:var(--brass-light); direction:ltr;}
+  .stat .lbl{color:var(--text-dim); font-size:13px; margin-top:6px;}
+
+  section{padding:90px 0;}
+  .section-head{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:44px; gap:20px; flex-wrap:wrap;}
+  .section-head h2{font-size:32px; font-weight:800;}
+  .section-head p{color:var(--text-dim); font-size:15px; max-width:420px;}
+
+  /* product grid */
+  .grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .p-card{background:var(--panel); padding:30px 24px; transition:.25s;}
+  .p-card:hover{background:var(--panel-2);}
+  .p-card .idx{font-family:'JetBrains Mono'; color:var(--teal); font-size:12px; margin-bottom:18px; display:block;}
+  .p-card h3{font-size:18px; font-weight:700; margin-bottom:10px;}
+  .p-card p{color:var(--text-dim); font-size:14px; margin-bottom:18px;}
+  .p-card .spec{font-family:'JetBrains Mono'; font-size:12px; color:var(--brass-light); direction:ltr; text-align:right;}
+
+  /* spotlight */
+  .spotlight{background:var(--panel); border:1px solid var(--line);}
+  .spotlight-grid{display:grid; grid-template-columns:1fr 1fr;}
+  .spotlight-media{position:relative; border-left:1px solid var(--line); padding:40px;}
+  .spotlight-body{padding:50px;}
+  .tag{display:inline-block; font-family:'JetBrains Mono'; font-size:11px; color:var(--teal); border:1px solid var(--teal); padding:4px 10px; margin-bottom:20px;}
+  .spotlight-body h3{font-size:28px; font-weight:800; margin-bottom:16px;}
+  .spotlight-body p{color:var(--text-dim); margin-bottom:24px;}
+  .feat-list{list-style:none; margin-bottom:30px;}
+  .feat-list li{display:flex; justify-content:space-between; padding:12px 0; border-top:1px solid var(--line); font-size:14px;}
+  .feat-list li:last-child{border-bottom:1px solid var(--line);}
+  .feat-list li span:last-child{font-family:'JetBrains Mono'; color:var(--brass-light); direction:ltr;}
+
+  /* features */
+  .feat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .feat-box{padding:30px; position:relative;}
+  .feat-box .num{font-family:'JetBrains Mono'; font-size:13px; color:var(--brass); margin-bottom:16px;}
+  .feat-box h4{font-size:17px; font-weight:700; margin-bottom:10px;}
+  .feat-box p{color:var(--text-dim); font-size:14px;}
+
+  /* blog */
+  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .post{background:var(--panel); border:1px solid var(--line);}
+  .post-thumb{height:170px; background:linear-gradient(135deg, var(--panel-2), var(--panel)); position:relative; border-bottom:1px solid var(--line); overflow:hidden;}
+  .post-thumb svg{position:absolute; inset:0; width:100%; height:100%; opacity:.5;}
+  .post-body{padding:24px;}
+  .post-date{font-family:'JetBrains Mono'; font-size:11px; color:var(--text-dim); direction:ltr; text-align:right; display:block; margin-bottom:12px;}
+  .post h3{font-size:17px; font-weight:700; margin-bottom:10px; line-height:1.5;}
+  .post p{color:var(--text-dim); font-size:13.5px; margin-bottom:16px;}
+  .post .readmore{color:var(--brass-light); font-size:13px; font-weight:600;}
+
+  /* cta */
+  .cta{background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center;}
+  .cta h2{font-size:30px; font-weight:800; margin-bottom:16px;}
+  .cta p{color:var(--text-dim); margin-bottom:30px;}
+
+  footer{padding:70px 0 30px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:60px;}
+  .foot-col h5{font-size:14px; font-weight:700; margin-bottom:18px; color:var(--brass-light);}
+  .foot-col ul{list-style:none;}
+  .foot-col li{margin-bottom:10px;}
+  .foot-col a{color:var(--text-dim); font-size:14px; transition:.2s;}
+  .foot-col a:hover{color:var(--text);}
+  .foot-bottom{border-top:1px solid var(--line); padding-top:26px; display:flex; justify-content:space-between; color:var(--text-dim); font-size:13px; flex-wrap:wrap; gap:10px;}
+  .foot-bottom .mono{color:var(--text-dim);}
+
+  [contenteditable="true"]{outline:1px dashed var(--teal); outline-offset:3px; background:rgba(63,167,160,.06); cursor:text;}
+
+  #edit-toggle{
+    position:fixed; bottom:24px; left:24px; z-index:100;
+    background:var(--brass); color:var(--btn-ink); border:none; padding:13px 22px;
+    font-family:'Vazirmatn'; font-weight:700; font-size:14px; cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.4); display:flex; align-items:center; gap:8px;
+  }
+  #save-toast{
+    position:fixed; bottom:24px; left:24px; z-index:100; background:var(--teal); color:var(--btn-ink);
+    padding:13px 22px; font-weight:700; font-size:14px; display:none;
+  }
+
+  @media(max-width:980px){
+    nav{display:none;}
+    .burger{display:flex;}
+    .mobile-nav{display:flex;}
+    .hero-grid{grid-template-columns:1fr; gap:36px;}
+    .diagram{max-width:380px; margin:0 auto;}
+    .grid-4{grid-template-columns:repeat(2,1fr);}
+    .spotlight-grid{grid-template-columns:1fr;}
+    .spotlight-media{border-left:none; border-bottom:1px solid var(--line);}
+    .feat-grid{grid-template-columns:1fr;}
+    .blog-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr; gap:30px;}
+    h1{font-size:34px;}
+    section{padding:64px 0;}
+  }
+
+  @media(max-width:640px){
+    .wrap{padding:0 18px;}
+    .nav{padding:14px 0;}
+    .logo{font-size:17px;}
+    .logo .mark{width:30px; height:30px; font-size:12px;}
+    .nav-right{gap:8px;}
+    .nav-cta{display:none;}
+    .hero{padding:44px 0 36px;}
+    .eyebrow{font-size:10px; justify-content:flex-start;}
+    h1{font-size:27px; margin-bottom:16px;}
+    .hero p.lead{font-size:15px; margin-bottom:26px;}
+    .btn{padding:14px 22px; font-size:14px; flex:1; text-align:center;}
+    .btn-row{width:100%;}
+    .diagram{max-width:280px;}
+    section{padding:48px 0;}
+    .section-head{margin-bottom:30px;}
+    .section-head h2{font-size:24px;}
+    .stats-grid{grid-template-columns:repeat(2,1fr); gap:18px 12px;}
+    .stat{border-right:none; border-bottom:1px solid var(--line); padding-bottom:16px;}
+    .stat .num{font-size:24px;}
+    .grid-4{grid-template-columns:1fr;}
+    .spotlight-media{padding:26px;}
+    .spotlight-body{padding:28px 22px;}
+    .spotlight-body h3{font-size:22px;}
+    .foot-grid{grid-template-columns:1fr; gap:34px;}
+    .foot-bottom{flex-direction:column; text-align:center;}
+    #edit-toggle{
+      left:14px; bottom:14px; padding:11px 16px; font-size:12px;
+    }
+    #edit-toggle span.label{display:none;}
+    #save-toast{left:14px; bottom:14px; font-size:12px; padding:11px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><span class="mark"><span>ز</span></span> زرین‌یراق</div>
+    <nav>
+      <ul>
+        <li><a href="#">خانه</a></li>
+        <li><a href="#products">محصولات</a></li>
+        <li><a href="#smart">دستگیره هوشمند</a></li>
+        <li><a href="#blog">بلاگ</a></li>
+        <li><a href="#about">درباره ما</a></li>
+        <li><a href="#contact">تماس با ما</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="تغییر تم روشن/تیره" title="تغییر تم">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12H5M19 12h2.5M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+      </button>
+      <a href="#contact" class="nav-cta">دریافت مشاوره</a>
+      <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#">خانه</a>
+    <a href="#products">محصولات</a>
+    <a href="#smart">دستگیره هوشمند</a>
+    <a href="#blog">بلاگ</a>
+    <a href="#about">درباره ما</a>
+    <a href="#contact">تماس با ما</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">تولید و واردات یراق‌آلات صنعتی</div>
+      <h1 contenteditable="false" data-key="hero-h1">دقتِ فلز، <em>هوشِ دیجیتال.</em><br>یراق‌آلات درب و کابینت.</h1>
+      <p class="lead" contenteditable="false" data-key="hero-lead">از لولا و ریل تا دستگیره‌های هوشمند اثرانگشتی؛ زرین‌یراق نزدیک به دو دهه است محصولات باکیفیت اروپایی و شرق آسیا را وارد و در کنار آن، خطوط تولید داخلی خود را با استاندارد صنعتی اجرا می‌کند.</p>
+      <div class="btn-row">
+        <a href="#products" class="btn btn-primary">مشاهده محصولات</a>
+        <a href="#contact" class="btn btn-ghost">درخواست نمایندگی</a>
+      </div>
+    </div>
+    <div class="diagram">
+      <svg viewBox="0 0 420 440">
+        <line class="dim-line" x1="40" y1="40" x2="380" y2="40"/>
+        <line class="dim-line" x1="40" y1="20" x2="40" y2="60"/>
+        <line class="dim-line" x1="380" y1="20" x2="380" y2="60"/>
+        <text x="210" y="34" text-anchor="middle" class="callout mono">210 mm</text>
+
+        <rect x="150" y="70" width="120" height="230" rx="6" fill="none" stroke="#34383e"/>
+        <rect x="165" y="95" width="90" height="150" rx="4" fill="none" stroke="#c4924f" stroke-width="1.3"/>
+        <circle cx="210" cy="150" r="18" fill="none" stroke="#3fa7a0" stroke-width="1.3"/>
+        <line x1="210" y1="140" x2="210" y2="160" stroke="#3fa7a0" stroke-width="1.3"/>
+        <line x1="200" y1="150" x2="220" y2="150" stroke="#3fa7a0" stroke-width="1.3"/>
+
+        <line class="dim-line" x1="270" y1="120" x2="340" y2="90"/>
+        <text x="345" y="88" class="callout callout-strong mono">CNC Aluminum Body</text>
+
+        <line class="dim-line" x1="220" y1="150" x2="330" y2="150"/>
+        <text x="335" y="153" class="callout callout-strong mono">Fingerprint Sensor</text>
+
+        <line class="dim-line" x1="200" y1="220" x2="80" y2="240"/>
+        <text x="15" y="244" class="callout mono">Battery · 6mo</text>
+
+        <line class="dim-line" x1="200" y1="270" x2="80" y2="300"/>
+        <text x="15" y="304" class="callout mono">App + Bluetooth</text>
+
+        <rect x="150" y="70" width="120" height="230" rx="6" fill="none" stroke="#34383e" stroke-dasharray="2 4"/>
+
+        <text x="210" y="360" text-anchor="middle" class="callout mono" fill="#9a9d9f" font-size="11">ZY-SMART-04 · SERIES</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="stats wrap" style="border-left:none;border-right:none;">
+  <div class="stats-grid">
+    <div class="stat"><div class="num">۱۸+</div><div class="lbl">سال سابقه فعالیت</div></div>
+    <div class="stat"><div class="num">۴۰۰+</div><div class="lbl">کد محصول فعال</div></div>
+    <div class="stat"><div class="num">۶۰۰۰+</div><div class="lbl">پروژه اجرا شده</div></div>
+    <div class="stat"><div class="num">۲۴</div><div class="lbl">استان تحت پوشش نمایندگی</div></div>
+  </div>
+</div>
+
+<section id="products">
+  <div class="wrap">
+    <div class="dim-divider">DIVISIONS / خطوط محصول</div>
+    <div class="section-head">
+      <h2>محصولات ما</h2>
+      <p>هر خانواده محصول با استاندارد مشخص، گارانتی مکتوب و مستندات فنی کامل عرضه می‌شود.</p>
+    </div>
+    <div class="grid-4">
+      <div class="p-card">
+        <span class="idx">01 / DOOR</span>
+        <h3>دستگیره و قفل درب</h3>
+        <p>دستگیره‌های کلاسیک، مدرن و ضدسرقت با روکش استیل و برنج.</p>
+        <div class="spec">IP44 · SS304</div>
+      </div>
+      <div class="p-card">
+        <span class="idx">02 / CABINET</span>
+        <h3>یراق کابینت و کمد</h3>
+        <p>لولا، ریل تلسکوپی، دستگیره کابینتی و سیستم بازویی نرم‌بند.</p>
+        <div class="spec">SOFT-CLOSE</div>
+      </div>
+      <div class="p-card">
+        <span class="idx">03 / SMART</span>
+        <h3>دستگیره هوشمند</h3>
+        <p>قفل اثرانگشتی، رمز دیجیتال، کارت RFID و اتصال اپلیکیشن.</p>
+        <div class="spec">BLE 5.0</div>
+      </div>
+      <div class="p-card">
+        <span class="idx">04 / RAIL</span>
+        <h3>لولا و ریل صنعتی</h3>
+        <p>ریل کشو بلبرینگی و لولای هیدرولیک برای مصارف سنگین.</p>
+        <div class="spec">40KG LOAD</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="smart">
+  <div class="wrap">
+    <div class="dim-divider">FEATURED / محصول منتخب</div>
+    <div class="spotlight">
+      <div class="spotlight-grid">
+        <div class="spotlight-media">
+          <svg viewBox="0 0 300 340" width="100%">
+            <rect x="90" y="30" width="120" height="280" rx="8" fill="none" stroke="#34383e"/>
+            <rect x="105" y="55" width="90" height="180" rx="6" fill="none" stroke="#c4924f" stroke-width="1.3"/>
+            <circle cx="150" cy="120" r="22" fill="none" stroke="#3fa7a0" stroke-width="1.3"/>
+            <rect x="128" y="165" width="44" height="30" rx="3" fill="none" stroke="#9a9d9f"/>
+            <line x1="210" y1="70" x2="260" y2="55" stroke="#34383e"/>
+            <line x1="210" y1="120" x2="260" y2="120" stroke="#34383e"/>
+            <line x1="210" y1="180" x2="260" y2="190" stroke="#34383e"/>
+            <line x1="90" y1="90" x2="40" y2="75" stroke="#34383e"/>
+            <line x1="90" y1="250" x2="40" y2="265" stroke="#34383e"/>
+          </svg>
+        </div>
+        <div class="spotlight-body">
+          <span class="tag">ZY-SMART-04</span>
+          <h3 contenteditable="false" data-key="smart-h3">دستگیره هوشمند اثرانگشتی</h3>
+          <p contenteditable="false" data-key="smart-p">بدنه CNC آلومینیوم، سنسور اثرانگشت نیمه‌هادی، بازشدن با کارت، رمز و اپلیکیشن موبایل. مناسب درب ورودی واحد و پروژه‌های انبوه‌سازی.</p>
+          <ul class="feat-list">
+            <li><span>ظرفیت اثرانگشت</span><span>100 users</span></li>
+            <li><span>عمر باتری</span><span>6 months</span></li>
+            <li><span>درجه حفاظت</span><span>IP44</span></li>
+            <li><span>گارانتی</span><span>24 months</span></li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">استعلام قیمت عمده</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="dim-divider">WHY ZARRINYARAGH / چرا زرین‌یراق</div>
+    <div class="section-head">
+      <h2>تعهد به دقت و اصالت</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="blueprint feat-box">
+        <div class="num mono">01</div>
+        <h4>گارانتی اصالت کالا</h4>
+        <p>هر محصول با کد رهگیری و برگه گارانتی رسمی، قابل استعلام از طریق سایت.</p>
+      </div>
+      <div class="blueprint feat-box">
+        <div class="num mono">02</div>
+        <h4>واردات مستقیم</h4>
+        <p>حذف واسطه از طریق قرارداد مستقیم با کارخانه‌های اروپایی و شرق آسیا.</p>
+      </div>
+      <div class="blueprint feat-box">
+        <div class="num mono">03</div>
+        <h4>پشتیبانی فنی نصب</h4>
+        <p>تیم فنی برای مشاوره پیش از خرید و آموزش نصب دستگیره‌های هوشمند.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <div class="wrap">
+    <div class="dim-divider">JOURNAL / بلاگ</div>
+    <div class="section-head">
+      <h2>آخرین مطالب</h2>
+      <p>راهنمای خرید، مقایسه محصولات و اخبار صنعت یراق‌آلات.</p>
+    </div>
+    <div class="blog-grid">
+      <article class="post">
+        <div class="post-thumb"><svg viewBox="0 0 300 170"><line x1="0" y1="85" x2="300" y2="85" stroke="#34383e"/><circle cx="150" cy="85" r="40" fill="none" stroke="#c4924f"/></svg></div>
+        <div class="post-body">
+          <span class="post-date mono">2026-06-14</span>
+          <h3>تفاوت دستگیره هوشمند اثرانگشتی و کارتی چیست؟</h3>
+          <p>مقایسه فنی و کاربردی دو تکنولوژی رایج در قفل‌های دیجیتال ورودی.</p>
+          <a class="readmore" href="#">ادامه مطلب ←</a>
+        </div>
+      </article>
+      <article class="post">
+        <div class="post-thumb"><svg viewBox="0 0 300 170"><rect x="90" y="40" width="120" height="90" fill="none" stroke="#3fa7a0"/></svg></div>
+        <div class="post-body">
+          <span class="post-date mono">2026-06-02</span>
+          <h3>راهنمای انتخاب ریل کشو مناسب برای کابینت آشپزخانه</h3>
+          <p>بلبرینگی یا تلسکوپی؟ چه ظرفیتی برای کابینت شما مناسب است.</p>
+          <a class="readmore" href="#">ادامه مطلب ←</a>
+        </div>
+      </article>
+      <article class="post">
+        <div class="post-thumb"><svg viewBox="0 0 300 170"><polygon points="150,40 210,130 90,130" fill="none" stroke="#c4924f"/></svg></div>
+        <div class="post-body">
+          <span class="post-date mono">2026-05-20</span>
+          <h3>۵ نشانه اصالت یراق‌آلات وارداتی که باید بدانید</h3>
+          <p>چگونه محصول اورجینال را از تقلبی در بازار یراق‌آلات تشخیص دهیم.</p>
+          <a class="readmore" href="#">ادامه مطلب ←</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>برای همکاری و نمایندگی آماده‌ایم</h2>
+    <p>کاتالوگ کامل محصولات و لیست قیمت عمده را دریافت کنید.</p>
+    <a href="#contact" class="btn btn-primary">درخواست کاتالوگ</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="logo" style="margin-bottom:16px;"><span class="mark"><span>ز</span></span> زرین‌یراق</div>
+        <p style="color:var(--text-dim); font-size:14px; max-width:280px;">تولید و واردات یراق‌آلات درب، کابینت و دستگیره‌های هوشمند. تهران، جاده مخصوص کرج، نبش خیابان صنعت.</p>
+      </div>
+      <div class="foot-col">
+        <h5>محصولات</h5>
+        <ul>
+          <li><a href="#">دستگیره درب</a></li>
+          <li><a href="#">یراق کابینت</a></li>
+          <li><a href="#">دستگیره هوشمند</a></li>
+          <li><a href="#">لولا و ریل</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>شرکت</h5>
+        <ul>
+          <li><a href="#">درباره ما</a></li>
+          <li><a href="#">بلاگ</a></li>
+          <li><a href="#">نمایندگی‌ها</a></li>
+          <li><a href="#">استعلام گارانتی</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>تماس</h5>
+        <ul>
+          <li><span class="mono">021-8888-4141</span></li>
+          <li>info@zarrinyaragh.ir</li>
+          <li>تهران، جاده مخصوص کرج</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© ۱۴۰۵ زرین‌یراق. تمامی حقوق محفوظ است.</span>
+      <span class="mono">Built as a static demo · zarrinyaragh.ir</span>
+    </div>
+  </div>
+</footer>
+
+<button id="edit-toggle">✎ <span class="label">ویرایش محتوای صفحه</span></button>
+<div id="save-toast">تغییرات ذخیره شد ✓</div>
+
+<script>
+(function(){
+  // theme toggle (light/dark), persisted per browser
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('theme-toggle');
+  var savedTheme = localStorage.getItem('zy_theme');
+  if(savedTheme === 'light'){ root.setAttribute('data-theme','light'); }
+
+  themeBtn.addEventListener('click', function(){
+    var isLight = root.getAttribute('data-theme') === 'light';
+    if(isLight){
+      root.removeAttribute('data-theme');
+      localStorage.setItem('zy_theme','dark');
+    } else {
+      root.setAttribute('data-theme','light');
+      localStorage.setItem('zy_theme','light');
+    }
+  });
+
+  // mobile hamburger menu
+  var burger = document.getElementById('burger');
+  var mobileNav = document.getElementById('mobile-nav');
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      burger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
+})();
+
+(function(){
+  var editables = document.querySelectorAll('[data-key]');
+  var editing = false;
+  var toggle = document.getElementById('edit-toggle');
+  var toast = document.getElementById('save-toast');
+
+  // load saved content
+  editables.forEach(function(el){
+    var key = 'zy_content_' + el.getAttribute('data-key');
+    var saved = localStorage.getItem(key);
+    if(saved) el.innerHTML = saved;
+  });
+
+  toggle.addEventListener('click', function(){
+    editing = !editing;
+    if(editing){
+      editables.forEach(function(el){ el.setAttribute('contenteditable','true'); });
+      toggle.textContent = '✓ ذخیره تغییرات';
+      toggle.style.background = 'var(--teal)';
+    } else {
+      editables.forEach(function(el){
+        el.setAttribute('contenteditable','false');
+        var key = 'zy_content_' + el.getAttribute('data-key');
+        localStorage.setItem(key, el.innerHTML);
+      });
+      toggle.textContent = '✎ ویرایش محتوای صفحه';
+      toggle.style.background = 'var(--brass)';
+      toast.style.display = 'block';
+      setTimeout(function(){ toast.style.display = 'none'; }, 2200);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
